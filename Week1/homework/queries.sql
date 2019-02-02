@@ -32,19 +32,32 @@ Order By SurfaceArea desc;
 
 --6. What are the names of all the cities in the Netherlands?
 --solution:
+Select name
+From city
+Where CountryCode = "NLD";
 
 
 --7. What is the population of Rotterdam ?
 --solution:
-
+Select Population
+From city
+Where Name = 'Rotterdam';
 
 --8. What's the top 10 countries by Surface Area ?
 --solution:
-
+Select Name, SurfaceArea
+From country
+Order By SurfaceArea desc
+Limit 10;
 
 --9. What's the top 10 most populated cities?
 --solution:
-
+Select Name, Population
+From city
+Order By Population desc
+Limit 10;
 
 --10. What is the population of the world ?
 --solution:
+Select Sum(Population)
+From country;
